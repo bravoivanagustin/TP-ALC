@@ -21,13 +21,13 @@ def calcularLU(A):
                 B = np.copy(U[i]) #Por si llega a haber cero, esto va??? Porque no devolveria A = L.U, preguntar.
                 U[i] = U[j]
                 U[j] = B
-                C = np.copy(P[i])
-                P[i] = P[j]
+                C = np.copy(P[i]) #P es mi pivote, preguntar como vamos a hacer esto nosotros
+                P[i] = P[j] 
                 P[j] = C
                 if i > 0:
                     D = np.copy(L[i,0:i])
-                    L[i,0:i] = L[j,0:i]
-                    L[j,0:i] = D
+                    L[i,0:i] = L[j,0:i]  #Voy cambiando las partes de L en funcion de las filas intercambiadas
+                    L[j,0:i] = D         #Solo tengo que cambiar abajo y antes de la diagonal
                 p = U[i][i] 
             else:
                 continue #Nada :P
