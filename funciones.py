@@ -34,3 +34,10 @@ def inversaLU(L, U):
 
     Inv = U_1 @ L_1
     return Inv
+
+A = np.array([[0.3,0.0,0.1],[0.05,1.0,0.2],[0.1,0.15,0.1]])
+d = np.array([100,100,300])
+L, U = calcularLU(A)
+A_1 = inversaLU(L,U)
+p = A_1@d
+print(p) #Punto 3?
